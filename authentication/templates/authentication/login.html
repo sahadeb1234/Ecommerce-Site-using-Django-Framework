@@ -1,0 +1,33 @@
+{% extends 'authentication/navbar.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block main-content %}
+
+  <div class="container mb-5">
+    <div class="card mx-auto mt-5 pb-3 shadow rounded" style="width: 25rem;">
+      <div class="card-body">
+        <h4 class="card-title">Login</h4>
+<form action="" method="post" novalidate>
+
+{% csrf_token %}
+
+{{form}}
+
+<input type="submit" value="Login" class="btn btn-info mt-3">
+</form>
+
+{% comment %} <p class="mt-2"><a href="{% url 'register' %}">Register</a></p> {% endcomment %}
+<hr class="hr-text" data-content="New to Smd?">
+
+        <!-- Create account button -->
+        <a href="{% url 'register' %}" class="btn btn-dark btn-sm w-100 mt-2">Create your  Shopmandu account</a>
+        <a href="#" class="btn btn-outline-success btn-sm w-100 mt-2">
+          <i class="fab fa-google"></i> Sign in with Google
+        </a>
+        <a href="#" class="btn btn-outline-primary btn-sm w-100 mt-2">
+          <i class="fab fa-facebook-square"></i> Sign in with Facebook
+        </a>
+</div>
+</div>
+</div>
+{% endblock main-content %}

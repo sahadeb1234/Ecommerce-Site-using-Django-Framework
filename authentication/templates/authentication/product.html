@@ -1,0 +1,28 @@
+{% extends 'authentication/navbar.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block main-content %}
+<div class="container">
+<h3>Product: {{product.title}}</h3><hr>
+<div class="row">
+<div class="col-md-6">
+<img src="{{product.image.url}}" alt="" class="img-fluid">
+
+</div>
+<div class="col md-6">
+<h3>{{product.title}} (view {{product.views_count}})</h3>
+<h5>Category:{{product.Category}}</h4>
+<h5>Price: <strike> Rs.{{product.marked_price}} </strike>Rs. {{product.selling_price}}</h5>
+
+<a href="{% url 'addtocart' product.id %}" class="btn btn-info">Add to Cart</a>
+<hr>
+<p class="text-info">Warranty:{{product.warranty}}</p>
+<p class="text-info">Return Plicy:{{product.return_policy}}</p>
+<hr>
+<p>{{product.description}}</p>
+</div>
+
+</div>
+</div>
+
+{% endblock main-content %}
